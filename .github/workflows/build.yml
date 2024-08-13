@@ -53,6 +53,7 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args: |
+            -Dsonar.organization=grupo-bancolombia
             -Dsonar.projectKey=ms-parking-demo
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
