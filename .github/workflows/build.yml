@@ -40,6 +40,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-wrapper-
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -63,9 +66,3 @@ jobs:
         with:
           name: test-results
           path: build/test-results/test
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          files: build/reports/jacoco/test/jacocoTestReport.xml
-          token: ${{ secrets.CODECOV_TOKEN }}
