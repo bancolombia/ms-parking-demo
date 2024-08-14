@@ -58,6 +58,7 @@ jobs:
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
             -Dsonar.branch.name=main
+            -Dsonar.java.binaries=build/classes/java/main
 
       - name: Upload test results
         uses: actions/upload-artifact@v3
