@@ -54,9 +54,11 @@ jobs:
         with:
           args: |
             -Dsonar.organization=grupo-bancolombia
-            -Dsonar.projectKey=ms-parking-demo
+            -Dsonar.projectKey=bancolombia_ms-parking-demo
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.branch.name=main
+            -Dsonar.java.binaries=build/classes/java/main
 
       - name: Upload test results
         uses: actions/upload-artifact@v3
